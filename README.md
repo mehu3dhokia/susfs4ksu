@@ -8,7 +8,7 @@
 ## 兼容性 ##
 - susfs 内核补丁可能因内核版本不同（甚至相同版本）而异，您可能需要为自己的内核创建定制补丁。
 
-## 补丁指南（仅适用于 GKI 内核且基于官方 Google 源码构建）##
+## 补丁指南（仅适用于 GKI 内核且基于官方 Google 源码构建）
 **- 前置条件 -**
 1. 所有 susfs 补丁均基于 **weishu 维护的官方 KernelSU（含 release tag）**。请使用 **release tag** 克隆其仓库，并确保本 susfs 分支也使用 **release tag** 或包含 **"Bump version to vX.X.X"** 的提交，以获得最佳补丁效果。
 2. 只要启用 `KSU_SUSFS_HAS_MAGIC_MOUNT` 功能，SUSFS 即可支持 Magisk Mount (Magic Mount) 的 AUTO_ADD_ 特性。
@@ -41,7 +41,7 @@
 1. 运行 `./build_ksu_susfs_tool.sh` 构建 `ksu_susfs` 工具，ARM64/ARM 二进制文件将复制至 `ksu_module_susfs/tools/`。
 2. 可将编译后的 `ksu_susfs` 推送至 `/data/adb/ksu/bin/`，以便在 adb root shell、Termux root shell 或自定义 KSU 模块中直接运行。
 
-## 构建 sus_su 用户空间工具（已弃用）##
+## 构建 sus_su 用户空间工具（已弃用）
 **--重要提示--**
 - `sus_su` 工具现已弃用，因部分新小米设备存在名为 "mrmd" 的 root 检测服务（由 init 进程启动）。由于 overlayfs 挂载的 sus_su 无法为 init 进程卸载，故会被检测到（除非有更优卸载方案）。
 
